@@ -4,7 +4,9 @@
   "description": "A hobby project to scan a number plate and then retrieve information about the specific number plate",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
     "bootstrap": "^5.3.0"
   },
   "devDependencies": {
+    "live-server": "^1.2.2",
     "sass": "^1.63.6"
   }
 }
