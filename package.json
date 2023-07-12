@@ -1,0 +1,20 @@
+{
+  "name": "bilskiltscanner",
+  "version": "1.0.0",
+  "description": "A hobby project to scan a number plate and then retrieve information about the specific number plate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianBrands/Bilskilt.git"
+  },
+  "keywords": [],
+  "author": "Adrian Brandshaug",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrianBrands/Bilskilt/issues"
+  },
+  "homepage": "https://github.com/adrianBrands/Bilskilt#readme"
+}
