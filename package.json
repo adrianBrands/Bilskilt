@@ -1,33 +1,15 @@
 {
-  "name": "bilskiltscanner",
-  "version": "1.0.0",
-  "description": "A hobby project to scan a number plate and then retrieve information about the specific number plate",
-  "main": "index.js",
+  "name": "bilskilt",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "sass src/scss:dist/css",
-    "watch": "sass --watch src/scss:dist/css & live-server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adrianBrands/Bilskilt.git"
-  },
-  "keywords": [],
-  "author": "Adrian Brandshaug",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adrianBrands/Bilskilt/issues"
-  },
-  "homepage": "https://github.com/adrianBrands/Bilskilt#readme",
-  "dependencies": {
-    "bootstrap": "^5.3.0"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "eslint": "^8.44.0",
-    "live-server": "^1.2.2",
-    "prettier": "^3.0.0",
-    "sass": "^1.63.6"
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0"
   }
 }
