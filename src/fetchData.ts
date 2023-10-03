@@ -24,15 +24,19 @@ export const VehicleData = async (): Promise<Array<VehicleData> | string | undef
     const response = await fetch(corsEnabledUrl, getData);
     const data = await response.json();
 
-    const { kjoretoydataListe } = data;
-
-    console.log(kjoretoydataListe[0]);
+    const { kjoretoydataListe }: { kjoretoydataListe: any } = data;
 
     const { kjennemerke, kjoretoyId, periodiskKjoretoyKontroll, registrering } = kjoretoydataListe[0];
-    console.log(kjoretoyId.kjennemerke);
 
-    console.log(kjennemerke[0].kjennemerkekategori);
-    
+    console.log(kjoretoyId.kjennemerke);
+    console.log(`kjennemerkekategori: ${kjennemerke[0].kjennemerkekategori}`);
+    console.log(`Kontroll frist: ${periodiskKjoretoyKontroll.kontrollfrist}`);
+
+    const { fomTidspunkt, kjoringensArt }: { fomTidspunkt: string; kjoringensArt: Object } = registrering;
+
+    console.log(fomTidspunkt);
+    console.log(kjoringensArt);
+
     return data;
   } catch (error) {
     if (error) {
