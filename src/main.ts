@@ -1,6 +1,5 @@
 import "./style.css";
-import { VehicleData } from "./fetchData";
-
+import { displayVehicleData } from "./vehicleData";
 const getWelcomeClass: HTMLElement | null = document.querySelector(".welcome");
 
 const createH1: HTMLHeadingElement = document.createElement("h1");
@@ -13,6 +12,6 @@ getWelcomeClass?.append(createH1);
 
 console.log("hello");
 
-VehicleData();
+displayVehicleData()
 
 
