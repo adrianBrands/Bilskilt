@@ -1,6 +1,7 @@
 import { FetchVehicleData } from "./fetchData";
 
 
+
 interface RegistreringsData {
   forstegangsregistrering: {
     registrertForstegangNorgeDato: string;
