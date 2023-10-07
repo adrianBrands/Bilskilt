@@ -11,8 +11,8 @@ interface VehicleData {
   };
 }
 
-export const FetchVehicleData = async (): Promise<Array<VehicleData> | string | undefined> => {
-  const api = "https://www.vegvesen.no/ws/no/vegvesen/kjoretoy/felles/datautlevering/enkeltoppslag/kjoretoydata?kjennemerke=bt13775";
+export const fetchVehicleData = async (test:any): Promise<Array<VehicleData> | string | undefined> => {
+  const api = `https://www.vegvesen.no/ws/no/vegvesen/kjoretoy/felles/datautlevering/enkeltoppslag/kjoretoydata?kjennemerke=${test}`;
   const corsEnabledUrl = "https://noroffcors.onrender.com/" + api;
 
   try {
@@ -25,6 +25,7 @@ export const FetchVehicleData = async (): Promise<Array<VehicleData> | string | 
     };
     const response = await fetch(corsEnabledUrl, getData);
     const data = await response.json();
+    console.log(data)
 
     return data;
   } catch (error) {

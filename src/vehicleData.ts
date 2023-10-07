@@ -1,6 +1,4 @@
-import { FetchVehicleData } from "./fetchData";
-
-
+import { addElement } from "./content";
 
 interface RegistreringsData {
   forstegangsregistrering: {
@@ -20,31 +18,25 @@ interface Godkjenning {
   };
 }
 
-interface Kjennemerke {
+interface Kjennemerke {}
 
-}
+interface KjoretoyId {}
 
-interface KjoretoyId {
-    
-}
+interface PeriodiskKjoretoyKontroll {}
 
-interface PeriodiskKjoretoyKontroll
+interface RegistrertForstegangNorgeDato {}
 
-{
-    
-}
+export async function vehicleData(data: any) {
+  const promise = Promise.resolve(data);
 
-interface RegistrertForstegangNorgeDato {
-    
-}
-
-export async function displayVehicleData() {
-  const data: any = await FetchVehicleData();
-  console.log(data);
-
-  //console.log(data.kjoretoydataListe[0])
-
-  // const { kjoretoydataListe } = data;
+  promise
+    .then((value) => {
+      console.log(value.kjoretoydataListe[0]);
+      addElement(value);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   const registrering: RegistreringsData = {
     forstegangsregistrering: {
