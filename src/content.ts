@@ -13,6 +13,6 @@ export function addElement(value: string | any) {
     },
   };
 
-  $(".content").append(`<p class=""><strong>Registrert første gang i Norge:</strong></p>
-  <p>${registrering.forstegangsregistrering.registrertForstegangNorgeDato}</p>`);
+  $(".content").empty().append(`<p class="mt-5"><strong>Registrert første gang i Norge:</strong></p>
+  <p class="display-6">${registrering.forstegangsregistrering.registrertForstegangNorgeDato}</p>`);
 }
