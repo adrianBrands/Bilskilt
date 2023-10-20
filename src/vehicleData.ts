@@ -18,13 +18,13 @@ interface Godkjenning {
   };
 }
 
-interface Kjennemerke {}
+/*interface Kjennemerke {}
 
 interface KjoretoyId {}
 
 interface PeriodiskKjoretoyKontroll {}
 
-interface RegistrertForstegangNorgeDato {}
+interface RegistrertForstegangNorgeDato {}*/
 
 export async function vehicleData(data: any) {
   const promise = Promise.resolve(data);

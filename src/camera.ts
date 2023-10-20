@@ -22,7 +22,7 @@ export function camera() {
   document.getElementById("snap")?.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const image = context.drawImage(video, 0, 0, 640, 480);
+    context.drawImage(video, 0, 0, 640, 480);
     const data = canvas.toDataURL("image/png");
     photo.setAttribute("src", data);
 
