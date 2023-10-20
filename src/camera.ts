@@ -28,7 +28,7 @@ export function camera() {
 
     run(data)
       .then((result) => {
-        //vehicleData(fetchVehicleData(result));
+        vehicleData(fetchVehicleData(result));
         console.log(result);
       })
       .catch((error) => {

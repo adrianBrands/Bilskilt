@@ -1,6 +1,5 @@
 import "./style.css";
 import { numberPlateInput } from "./input";
-import image from "../images/bilde.png";
 import { camera } from "./camera";
 
 const close = document.querySelector(".closeBt");
