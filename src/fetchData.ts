@@ -1,16 +1,18 @@
 interface VehicleData {
-  forstegangsregistrering: {
-    registrertForstegangNorgeDato: string;
+  kjoretoydataListe: {
+    forstegangsregistrering: {
+      registrertForstegangNorgeDato: string;
+    };
+    godkjenning: Object;
+    kjennemerke: [Object];
+    kjoretoyId: Object;
+    periodiskKjoretoyKontroll: Object;
+    registrering: Object;
   };
-  godkjenning: Object;
-  kjennemerke: [Object];
-  kjoretoyId: Object;
-  periodiskKjoretoyKontroll: Object;
-  registrering: Object;
 }
 
-export const VehicleData = async (): Promise<Array<VehicleData> | string | undefined> => {
-  const api = "https://www.vegvesen.no/ws/no/vegvesen/kjoretoy/felles/datautlevering/enkeltoppslag/kjoretoydata?kjennemerke=bt13775";
+export const fetchVehicleData = async (test:any): Promise<Array<VehicleData> | string | undefined> => {
+  const api = `https://www.vegvesen.no/ws/no/vegvesen/kjoretoy/felles/datautlevering/enkeltoppslag/kjoretoydata?kjennemerke=${test}`;
   const corsEnabledUrl = "https://noroffcors.onrender.com/" + api;
 
   try {
@@ -23,19 +25,7 @@ export const VehicleData = async (): Promise<Array<VehicleData> | string | undef
     };
     const response = await fetch(corsEnabledUrl, getData);
     const data = await response.json();
-
-    const { kjoretoydataListe }: { kjoretoydataListe: any } = data;
-
-    const { kjennemerke, kjoretoyId, periodiskKjoretoyKontroll, registrering } = kjoretoydataListe[0];
-
-    console.log(kjoretoyId.kjennemerke);
-    console.log(`kjennemerkekategori: ${kjennemerke[0].kjennemerkekategori}`);
-    console.log(`Kontroll frist: ${periodiskKjoretoyKontroll.kontrollfrist}`);
-
-    const { fomTidspunkt, kjoringensArt }: { fomTidspunkt: string; kjoringensArt: Object } = registrering;
-
-    console.log(fomTidspunkt);
-    console.log(kjoringensArt);
+    console.log(data)
 
     return data;
   } catch (error) {

@@ -3,11 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="/src/main.ts" defer></script>
-    <title>Vite + TS</title>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js" defer></script>
+    <title>Bilskilt</title>
   </head>
   <body>
-    <div class="welcome"></div>
+    <div class="container welcome mt-5"></div>
+    <div class="container">
+      <form action="" id="form" class="numberPlateForm mt-3">
+        <div class="mb-3">
+          <label for="numberPlateInput" class="form-label">Registreringsnummer:</label>
+          <input name="numberPlate" id="numberPlateInput" type="text" class="form-control" placeholder="F.eks. AB12345" />
+        </div>
+        <button type="submit" class="btn btn-lg btn-warning text-light buttonClick">Submit</button>
+      </form>
+    </div>
+    <div class="container content mt-5"></div>
+
+    <div class="container d-flex justify-content-between">
+      <button class="btn btn-secondary text-light openBt">open camera</button>
+      <button class="btn btn-secondary text-light closeBt">close camera</button>
+    </div>
+
+    <div class="container w-100 hide">
+      <video id="video" width="640" height="480" autoplay></video>
+      <button class="btn btn-warning text-light" id="snap">take photo</button>
+      <canvas id="canvas" width="640" height="480"></canvas>
+      <div class="container">
+        <img id="imgInput" style="max-width: 500px" />
+      </div>
+    </div>
   </body>
 </html>
